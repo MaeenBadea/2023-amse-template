@@ -14,17 +14,17 @@ The project aims to determine the effect of weather conditions on traffic safety
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1: Road traffic accidents by accident location in Berlin 2021
-* Metadata URL: https://mobilithek.info/offers/-1084804050379511863
+### Datasource1: Road traffic accidents by accident location in Berlin 2018
+* Metadata URL: https://mobilithek.info/offers/-3519010126117898737
 * Data URL: https://www.statistik-berlin-brandenburg.de/opendata/AfSBBB_BE_LOR_Strasse_Strassenverkehrsunfaelle_2021_Datensatz.csv
 * Data Type: CSV
 
 Road traffic accidents with personal injury by accident location with street name, GPS coordinates and LOR planning area in Berlin 2020; Accident month, weekday, hour, Accident type and category
 
-### Datasource2: Road traffic accidents by accident location in Berlin 2021
+### Datasource2: Open Meteo Weather API
 * Metadata URL: https://open-meteo.com/en/docs/historical-weather-api
 * Data URL: https://open-meteo.com/en/docs/historical-weather-api
-* Data Type: CSV
+* Data Type: JSON
 
 OpenMeteo API is a free and open-source weather API that provides access to global and historical weather data. It offers a range of endpoints to retrieve weather forecasts, current conditions, and historical weather data. OpenMeteo API is easy to use and provides a variety of data formats, including csv & json making it a popular choice for developers who need to integrate weather data into their applications.
 
