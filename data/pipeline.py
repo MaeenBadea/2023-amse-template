@@ -38,9 +38,9 @@ class DataPipeline:
         print("Start: Data Loading")
         t1 = time() 
 
-        # engine = create_engine("sqlite:///berlin_dataset.db")
-        # self.dataset_df.to_sql("./data/berlin_dataset.db", engine, if_exists="replace")
-        self.dataset_df.to_csv("./data/berlin_dataset.csv")
+        engine = create_engine("sqlite:///berlin_dataset.db")
+        self.dataset_df.to_sql("./data/berlin_dataset.db", engine, if_exists="replace")
+        # self.dataset_df.to_csv("./data/berlin_dataset.csv")
         t2 = time()
         print("Finish: Data Loading {} s ".format(t2-t1))
 
