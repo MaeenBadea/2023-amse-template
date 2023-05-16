@@ -16,10 +16,10 @@ The project aims to determine the effect of weather conditions on traffic safety
 
 ### Datasource1: Road traffic accidents by accident location in Berlin 2018
 * Metadata URL: https://mobilithek.info/offers/-3519010126117898737
-* Data URL: https://www.statistik-berlin-brandenburg.de/opendata/AfSBBB_BE_LOR_Strasse_Strassenverkehrsunfaelle_2021_Datensatz.csv
+* Data URL: https://download.statistik-berlin-brandenburg.de/102d8fde949519f6/d99e618a1ec6/AfSBBB_BE_LOR_Strasse_Strassenverkehrsunfaelle_2018_Datensatz.csv
 * Data Type: CSV
 
-Road traffic accidents with personal injury by accident location with street name, GPS coordinates and LOR planning area in Berlin 2020; Accident month, weekday, hour, Accident type and category
+Road traffic accidents with personal injury by accident location with street name, GPS coordinates and LOR planning area in Berlin 2018; Accident month, weekday, hour, Accident type and category
 
 ### Datasource2: Open Meteo Weather API
 * Metadata URL: https://open-meteo.com/en/docs/historical-weather-api
