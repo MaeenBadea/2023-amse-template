@@ -11,6 +11,11 @@ class DataPipeline:
         self.accidents_df = None
         self.weather_df = None
 
+    def execute_pipeline(self):
+        self.extract_data()
+        self.transform_data()
+        self.load_data()
+
     ############################################
     ############## ETL functions ###############
     ###########################################
@@ -98,6 +103,4 @@ class DataPipeline:
         return df
 
 pipeline = DataPipeline()
-pipeline.extract_data()
-pipeline.transform_data()
-pipeline.load_data()
+pipeline.execute_pipeline()
