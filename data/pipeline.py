@@ -43,8 +43,8 @@ class DataPipeline:
         print("Start: Data Loading")
         t1 = time() 
 
-        engine = create_engine("sqlite:///berlin_dataset.db")
-        self.dataset_df.to_sql("./data/berlin_dataset.db", engine, if_exists="replace")
+        engine = create_engine("sqlite:///berlin_dataset.sqlite")
+        self.dataset_df.to_sql("berlin_dataset", engine, if_exists="replace")
         # self.dataset_df.to_csv("./data/berlin_dataset.csv")
         t2 = time()
         print("Finish: Data Loading {} s ".format(t2-t1))
@@ -100,7 +100,11 @@ class DataPipeline:
                                 	})
         grouped = grouped.rename(columns={"date":"total"})
         df = pd.concat([grouped, categories], axis=1).reindex(grouped.index)
-        return df
+        
+        new_cols_order = df.columns.tolist()
+        new_cols_order.remove('total')
+        new_cols_order = ['total'] + new_cols_order
+        return df[new_cols_order]
 
 pipeline = DataPipeline()
 pipeline.execute_pipeline()
