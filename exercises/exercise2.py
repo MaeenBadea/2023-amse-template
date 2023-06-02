@@ -10,7 +10,7 @@ sql_types = {
     'Laenge': types.FLOAT,
     'Breite': types.FLOAT,
     'Betreiber_Name': types.TEXT,
-    'Betreiber_Nr': types.FLOAT,
+    'Betreiber_Nr': types.BIGINT,
 
 }
 class DataPipeline:
