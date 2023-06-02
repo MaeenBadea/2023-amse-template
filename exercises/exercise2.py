@@ -3,13 +3,13 @@ from sqlalchemy import create_engine, types
 								
 sql_types = {
     'EVA_NR': types.BIGINT,
-    'DS100': types.String,
-    'IFOPT': types.String,
-    'NAME': types.String,
-    'Verkehr': types.String,
+    'DS100': types.TEXT,
+    'IFOPT': types.TEXT,
+    'NAME': types.TEXT,
+    'Verkehr': types.TEXT,
     'Laenge': types.FLOAT,
     'Breite': types.FLOAT,
-    'Betreiber_Name': types.String,
+    'Betreiber_Name': types.TEXT,
     'Betreiber_Nr': types.FLOAT,
 
 }
