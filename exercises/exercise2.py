@@ -2,6 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine, types
 								
 sql_types = {
+    'index': types.BIGINT,
     'EVA_NR': types.BIGINT,
     'DS100': types.TEXT,
     'IFOPT': types.TEXT,
