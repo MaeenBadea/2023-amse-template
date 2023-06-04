@@ -34,7 +34,7 @@ class DataPipeline:
         valid_rows = (self.dataset_df['Verkehr'].isin(['RV','FV','nur DPN']) & 
                     self.dataset_df['Laenge'].astype(float).between(-90,90)
                     & self.dataset_df['Breite'].astype(float).between(-90,90) 
-                    & ( self.dataset_df['IFOPT'].str.match("\w{2}\d*:\d*(:\d*)*")== True) )
+                    & self.dataset_df['IFOPT'].str.match("\w{2}\d*:\d*(:\d*)*"))
         
         self.dataset_df = self.dataset_df[valid_rows]
         self.dataset_df = self.dataset_df.dropna()
