@@ -2,7 +2,6 @@ import pandas as pd
 from sqlalchemy import create_engine, types
 								
 sql_types = {
-    'index': types.BIGINT,
     'EVA_NR': types.BIGINT,
     'DS100': types.TEXT,
     'IFOPT': types.TEXT,
@@ -44,7 +43,7 @@ class DataPipeline:
     def load_data(self):
         if self.dataset_df is not None:
             engine = create_engine("sqlite:///trainstops.sqlite")
-            self.dataset_df.to_sql('trainstops',engine ,  if_exists='replace', dtype= sql_types)
+            self.dataset_df.to_sql('trainstops',engine ,  if_exists='replace',index= False, dtype= sql_types)
         else:
             raise ValueError('DF is empty, Check data extraction')
 
