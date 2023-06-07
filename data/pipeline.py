@@ -108,4 +108,3 @@ class DataPipeline:
 
 pipeline = DataPipeline()
 pipeline.execute_pipeline()
-#test the ci workflow
