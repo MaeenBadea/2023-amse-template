@@ -20,7 +20,7 @@ def test_api_reading(etl_pipeline):
 
 
 # check data has been transformed
-# columns from both datasets exist & checks translation of columns 
+# columns from both datasets exist & checks translation of columns from german -> english
 def test_data_transform(etl_pipeline):
     # Test data transformations
     etl_pipeline.extract_data()
