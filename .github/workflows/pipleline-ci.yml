@@ -2,8 +2,9 @@ name: Pipeline CI
 
 on:
   push:
-    branches: [ "main" ]
-    paths: 
+    branches:
+    - main
+    paths:
     - data/**
 
 
@@ -24,6 +25,6 @@ jobs:
         pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: execute tests
+    - name: Execute tests
       run: |
         ./project/tests.sh
