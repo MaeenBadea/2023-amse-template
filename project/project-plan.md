@@ -34,10 +34,10 @@ OpenMeteo API is a free and open-source weather API that provides access to glob
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Collect and clean the dataset of traffic accidents and weather conditions. (#1)[https://github.com/MaeenBadea/2023-amse-template/issues/1]
-2. Set up automated data pipelines for efficient data processing (#2)[https://github.com/MaeenBadea/2023-amse-template/issues/2]
-3. Set up automated testing for the pipeline (#3)[https://github.com/MaeenBadea/2023-amse-template/issues/5]
-4. Explore and analyze the data (#3)[https://github.com/MaeenBadea/2023-amse-template/issues/3]
-5. utilize github actions for CI (#4)[https://github.com/MaeenBadea/2023-amse-template/issues/6]
-6. Visualize the data, draw conclusions and create final report. (#4)[https://github.com/MaeenBadea/2023-amse-template/issues/4]
+1. Collect and clean the dataset of traffic accidents and weather conditions. [https://github.com/MaeenBadea/2023-amse-template/issues/1]
+2. Set up automated data pipelines for efficient data processing [https://github.com/MaeenBadea/2023-amse-template/issues/2]
+3. Set up automated testing for the pipeline [https://github.com/MaeenBadea/2023-amse-template/issues/5]
+4. Explore and analyze the data [https://github.com/MaeenBadea/2023-amse-template/issues/3]
+5. utilize github actions for CI [https://github.com/MaeenBadea/2023-amse-template/issues/6]
+6. Visualize the data, draw conclusions and create final report. [https://github.com/MaeenBadea/2023-amse-template/issues/4]
 
