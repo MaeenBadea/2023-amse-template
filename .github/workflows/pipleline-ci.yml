@@ -12,15 +12,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        path: main
-    - name: Checkout exercise feedback
-      uses: actions/checkout@v3
-      with:
-        repository: MaeenBadea/2023-amse-template
-        path: ci
+    - uses: actions/checkout@v3
     - name: Set up Python 
       uses: actions/setup-python@v4
       with:
@@ -33,4 +25,4 @@ jobs:
 
     - name: Execute tests
       run: |
-        ./ci/project/tests.sh
+        ./project/tests.sh
