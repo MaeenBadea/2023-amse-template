@@ -32,5 +32,5 @@ def test_data_transform(etl_pipeline):
 def test_sqlite_database_creation(etl_pipeline):
     # Test SQLite database creation
     etl_pipeline.execute_pipeline()
-    assert os.path.exists("./data/berlin_dataset.db")
+    assert os.path.exists("./berlin_dataset.sqlite")
 
