@@ -1,0 +1,111 @@
+pipeline CarsPipeline{
+    CarsExtractor 
+        ->CarsTextFileInterpreter
+        ->CarsMetaLinesDeleter
+        ->CarsCSVInterpreter
+                ->CarsRenameColsABC
+                ->CarsRenameColM
+                ->CarsRenameColW
+                ->CarsRenameColAG
+                ->CarsRenameColAQ
+                ->CarsRenameColBA
+                ->CarsRenameColBK
+                ->CarsRenameColBU
+        ->CarsTableInterpreter
+        ->CarsLoader;
+
+    block CarsExtractor oftype HttpExtractor{
+        url : "https://www-genesis.destatis.de/genesis/downloads/00/tables/46251-0021_00.csv";
+    }
+
+    block CarsTextFileInterpreter oftype TextFileInterpreter {
+        encoding: "ISO-8859-1";
+    }
+    block CarsMetaLinesDeleter oftype TextLineDeleter {
+        lines: [1,2,3,4,5,6, 484, 485, 486, 487];
+    }
+
+    
+	block CarsCSVInterpreter oftype CSVInterpreter {
+		delimiter: ";";
+	}
+
+    // block CarsColumnDeleter oftype ColumnDeleter {
+    // delete: [column B];
+    // }
+ 
+
+    block CarsTableInterpreter oftype TableInterpreter{
+        header: true;
+        columns:[
+            "date" oftype text , 
+            "CIN" oftype CINType ,
+            "name" oftype text ,
+            "petrol" oftype PositiveIntType ,
+            "diesel" oftype PositiveIntType ,
+            "gas" oftype PositiveIntType ,
+            "electro" oftype PositiveIntType ,
+            "hybrid" oftype PositiveIntType ,
+            "plugInHybrid" oftype PositiveIntType ,
+            "others" oftype PositiveIntType ,
+        ];
+
+    }
+
+    block CarsLoader oftype SQLiteLoader {
+		file: "cars.sqlite";
+		table: "cars";
+	}
+
+    
+
+    //rename columns blocks
+    block CarsRenameColsABC oftype CellWriter {
+        at: range A1:C1 ;
+        write: ["date", "CIN", "name"];
+    }
+    block CarsRenameColM oftype CellWriter {
+        at: cell M1 ;
+        write: ["petrol"];
+    }
+    block CarsRenameColW oftype CellWriter {
+        at: cell W1 ;
+        write: ["diesel"];
+    }
+    block CarsRenameColAG oftype CellWriter {
+        at: cell AG1 ;
+        write: ["gas"];
+    }
+    block CarsRenameColAQ oftype CellWriter {
+        at: cell AQ1 ;
+        write: ["electro"];
+    }
+    block CarsRenameColBA oftype CellWriter {
+        at: cell BA1 ;
+        write: ["hybrid"];
+    }
+    block CarsRenameColBK oftype CellWriter {
+        at: cell BK1 ;
+        write: ["plugInHybrid"];
+    }
+    block CarsRenameColBU oftype CellWriter {
+        at: cell BU1 ;
+        write: ["others"];
+    }
+
+}
+
+valuetype CINType oftype text{
+    constraints: [CIN_Format];
+}
+valuetype PositiveIntType oftype integer{
+    constraints: [PositiveInt];
+}
+
+constraint PositiveInt oftype RangeConstraint{
+    lowerBound: 0;
+    lowerBoundInclusive: false;
+}
+constraint CIN_Format oftype RegexConstraint {
+  regex: /\d{5}/;
+}
