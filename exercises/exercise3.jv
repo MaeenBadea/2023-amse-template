@@ -30,11 +30,6 @@ pipeline CarsPipeline{
 		delimiter: ";";
 	}
 
-    // block CarsColumnDeleter oftype ColumnDeleter {
-    // delete: [column B];
-    // }
- 
-
     block CarsTableInterpreter oftype TableInterpreter{
         header: true;
         columns:[
