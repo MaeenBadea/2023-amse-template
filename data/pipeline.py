@@ -71,7 +71,7 @@ class DataPipeline:
         weather_df = weather_df.groupby("date").agg({
                             'temperature_mean': 'mean',
                             'windspeed_max': 'max',
-                            'precipitation_sum': 'sum',
+                            # 'precipitation_sum': 'sum',
                             'snowfall_sum': 'sum',
                             'rain_sum': 'sum'
                         })

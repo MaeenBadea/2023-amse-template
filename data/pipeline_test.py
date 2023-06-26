@@ -25,7 +25,7 @@ def test_data_transform(etl_pipeline):
     # Test data transformations
     etl_pipeline.extract_data()
     etl_pipeline.transform_data()
-    assert (not etl_pipeline.dataset_df.empty) and ({'precipitation_sum','Cars'} <= set(etl_pipeline.dataset_df.keys()))
+    assert (not etl_pipeline.dataset_df.empty) and ({'snowfall_sum','Cars'} <= set(etl_pipeline.dataset_df.keys()))
     
 # system test
 # test the whole pipeline execution
