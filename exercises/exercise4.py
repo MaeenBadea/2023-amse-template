@@ -54,6 +54,12 @@ class Pipeline:
         self.df = self.df.iloc[:, ~self.df.columns.duplicated()]
         self.df['Temperatur'] = self.df['Temperatur'].apply(celsius_to_fahrenheit)
         self.df['Batterietemperatur'] = self.df['Batterietemperatur'].apply(celsius_to_fahrenheit)
+
+        ## validations
+        valid_row = (self.df['Geraet aktiv'].isin(['Ja', 'Nein'])  
+                     & self.df['Geraet'].astype(int) > 0 
+                     & self.df['Monat'].astype(int).between(1,12)  )
+        self.df = self.df[valid_row]
         
 
     def load_data(self):
