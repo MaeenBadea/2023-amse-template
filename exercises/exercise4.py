@@ -56,8 +56,7 @@ class Pipeline:
         self.df['Batterietemperatur'] = self.df['Batterietemperatur'].apply(celsius_to_fahrenheit)
 
         ## validations
-        valid_row = (self.df['Geraet aktiv'].isin(['Ja', 'Nein'])  
-                     & self.df['Geraet'].astype(int) > 0 
+        valid_row = (self.df['Geraet'].astype(int) > 0 
                      & self.df['Monat'].astype(int).between(1,12)  )
         self.df = self.df[valid_row]
         
