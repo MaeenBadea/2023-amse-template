@@ -6,11 +6,11 @@ from sqlalchemy import create_engine, types
 sql_types = {
     'Geraet': types.BIGINT,
     'Hersteller': types.TEXT,
-    'Model': types.Text,
+    'Model': types.TEXT,
     'Monat': types.BIGINT,
-    'Temperatur': types.Float,
-    'Batterietemperatur': types.Float,
-    'Geraet aktiv': types.Text,
+    'Temperatur': types.FLOAT,
+    'Batterietemperatur': types.FLOAT,
+    'Geraet aktiv': types.TEXT,
 }
 
 def celsius_to_fahrenheit(c):
