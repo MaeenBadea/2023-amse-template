@@ -53,12 +53,13 @@ pipeline GtfsPipeline{
 
 }
 
-valuetype zone_id oftype text{
+valuetype zone_id oftype integer{
     constraints:[only_2001_zone];
 }
-constraint only_2001_zone oftype AllowlistConstraint{
-    allowlist: ['2001'];
-}
+constraint only_2001_zone oftype RangeConstraint{
+    lowerBound: 2001;
+    upperBound: 2001; 
+ }
 
 valuetype geo_coor oftype decimal{
     constraints: [geo_coor_constraint];
